@@ -82,7 +82,7 @@ class AnswersController < ApplicationController
     @answer.destroy
 
     respond_to do |format|
-      format.html { redirect_to answers_url }
+      format.html { redirect_to tweet_answers_url }
       format.json { head :no_content }
     end
   end
