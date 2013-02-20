@@ -1,0 +1,7 @@
+<% if @tweet.new_record? %>
+	$('input#tweet_status').effect('highlight', { color: 'red' });
+<% else %>
+	$('div#tweets').append("<%= escape_javascript(render @tweet) %>");
+	$('input#tweet_status').val('');
+	$('div#<%= dom_id(@tweet) %>').effect('highlight');
+<% end %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tweet:</b>
+  <%= @answer.tweet_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @answer.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_tweet_answer_path(@tweet, @answer) %> |
+<%= link_to 'Back', tweet_path(@tweet) %>

@@ -1,0 +1,24 @@
+<h1>Listing answers</h1>
+
+<table>
+  <tr>
+    <th>Tweet</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @answers.each do |answer| %>
+  <tr>
+    <td><%= answer.status %></td>
+    <td><%= link_to 'Show', tweet_answer_path(@tweet, answer) %></td>
+    <td><%= link_to 'Edit', edit_tweet_answer_path(@tweet, answer) %></td>
+    <td><%= link_to 'Destroy', [@tweet, answer], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Answer', new_tweet_answer_path(@tweet) %>

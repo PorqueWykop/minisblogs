@@ -1,0 +1,7 @@
+<%= div_for tweet do %>
+    <%= link_to "#{tweet.status.capitalize}", tweet %>
+    <div class="actions">
+      
+      <%= link_to 'delete', tweet, method: :delete, remote: true %>
+    </div>
+<% end %>

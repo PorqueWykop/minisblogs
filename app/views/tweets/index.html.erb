@@ -1,0 +1,21 @@
+<h1><center>Wpisy</center></h1>
+
+<center>
+<div id="tweets">
+  <%= render @tweets %>
+
+</div>
+
+<br />
+
+<%= form_for(Tweet.new, remote: true) do |f| %>
+  <div class="field">
+    <%= f.label :wpis %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit("Dodaj wpis") %>
+  </div>
+<% end %>
+
+</center>
