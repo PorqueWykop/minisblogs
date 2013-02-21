@@ -29,4 +29,12 @@
 
 <br />
 
-<%= link_to 'Odpowiedz', new_tweet_answer_path(@tweet) %>
+<%= form_for([@tweet, Answer.new], remote: true) do |f| %>
+      <div class="field">
+        <%= f.label :Wiadomosc %><br />
+        <%= f.text_field :status %>
+      </div>
+      <div class="actions">
+        <%= f.submit("Odpowiedz") %>
+      </div>
+<% end %>

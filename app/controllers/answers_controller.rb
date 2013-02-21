@@ -56,6 +56,7 @@ class AnswersController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -84,6 +85,7 @@ class AnswersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tweet_answers_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

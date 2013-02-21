@@ -1,7 +1,25 @@
 <%= div_for tweet do %>
     <%= link_to "#{tweet.status.capitalize}", tweet %>
     <div class="actions">
-      
+      <%= link_to 'edit', edit_tweet_path(tweet) %>
       <%= link_to 'delete', tweet, method: :delete, remote: true %>
+      <div class="answers">
+      <% tweet.answers.each do |answer| %>
+        <br />
+      	<%= answer.status.capitalize %>
+      <% end %>
+      </div>
+      <br />
+      
+      <%= form_for([tweet, Answer.new], remote: true) do |f| %>
+  		<div class="field">
+    		<%= f.label :Wiadomosc %><br />
+    		<%= f.text_field :status %>
+  		</div>
+  		<div class="actions">
+    		<%= f.submit("Odpowiedz") %>
+  		</div>
+	  <% end %>
+
     </div>
 <% end %>
