@@ -10,15 +10,20 @@
       <% end %>
       </div>
       <br />
+
+      <a href="#" id="answers-show" class="more" onclick="showHide('answers');return false;">Odpowiedz</a></p>
+
+      <div id="answers" class="more" style="display: none">
+        <%= form_for([tweet, Answer.new], remote: true) do |f| %>
+  		  <div class="field">
+    	    <%= f.label :Wiadomosc %><br />
+    		  <%= f.text_field :status %>
+  		  </div>
+  		  <div class="actions">
+    	   <%= f.submit("Odpowiedz") %>
+  		  </div>
+      </div>
       
-      <%= form_for([tweet, Answer.new], remote: true) do |f| %>
-  		<div class="field">
-    		<%= f.label :Wiadomosc %><br />
-    		<%= f.text_field :status %>
-  		</div>
-  		<div class="actions">
-    		<%= f.submit("Odpowiedz") %>
-  		</div>
 	  <% end %>
 
     </div>

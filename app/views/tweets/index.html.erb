@@ -7,14 +7,12 @@
 
 <br />
 
-<%= form_for(Tweet.new, remote: true) do |f| %>
-  <div class="field">
-    <%= f.label :wpis %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit("Dodaj wpis") %>
-  </div>
-<% end %>
+
+
+<a href="#" id="news-show" class="more" onclick="showHide('news');return false;">Dodaj wpis!</a></p>
+
+<div id="news" class="more" style="display: none">
+	<%= render 'new' %>
+</div>
 
 </center>

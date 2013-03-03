@@ -4,4 +4,5 @@
 	$('div#tweets').append("<%= escape_javascript(render @tweet) %>");
 	$('input#tweet_status').val('');
 	$('div#<%= dom_id(@tweet) %>').effect('highlight');
+	$('div#news').onclick=showHide('news');
 <% end %>
